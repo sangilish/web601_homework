@@ -1,0 +1,266 @@
+header {
+    width: 100%;
+    min-height: 400px;
+    padding-top: 3em;
+}
+#home header {
+    background: lightgray no-repeat url('image/cliff_ocean.jpg');
+    background-size: 1500px;
+}
+#activities header {
+    background: lightgray no-repeat url('image/runfly.jpg');
+    background-size: 1500px;
+}
+#contact header {
+    background: lightgray no-repeat url('image/cliff_rock.jpg');
+    background-size: 1500px;
+}
+.main-header {
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 700px;
+    margin: 2em auto 0 auto;
+    min-height: 100px;
+    height: 100px;
+}
+.main-header .logo img {
+    width: 100px;
+    height: 100px;
+    margin: 0 2em 0 0;
+    float: left;
+}
+
+/* Navigation */
+.main-menu {
+    margin-left: 220px;
+    font-weight: 400;
+}
+.main-menu ul li {
+    list-style-type: none;
+    display: inline-block;
+    float: left;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-left: 1px solid rgba(202, 204, 202, 0.6);
+    line-height: 100px;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+.main-menu ul li a {
+    text-decoration: none;
+    color: #888;
+}
+.main-menu ul li a:hover {
+    color: #9ed034;
+}
+.main-menu ul li.active {
+    background: #9ed034;
+    border: none;
+}
+.main-menu ul li.active a {
+    color: #fff;
+}
+
+/* Main */
+main {
+    padding: 50px 50px;
+}
+h1, h2 {
+    font: Arial, Helvetica, sans-serif;
+    color: #9ed034;
+    padding-bottom: 10px;
+}
+section {
+    width: 100%;
+    background-color: #4288c3;
+}
+section #partners {
+    width: 1200px;
+    padding: 2em 0 2em 0;
+    margin: 0 auto;
+    text-align: center;
+}
+section #partners .partner {
+    display: inline-block;
+    margin: 0 0.75em;
+    padding: 1.3em 1.5em;
+    background-color: #fff;
+    border-radius: 50%;
+}
+section #partners .partner img {
+    width: 90px;
+    height: 90px;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    height: 155px;
+    padding-bottom: 1em;
+    background-color: #ecfab8;
+}
+footer #nondisclaimer .copy {
+    padding: 3.5em 3.5em 3.5em 13em;
+    float: left;
+    font-size: 0.9em;
+}
+footer #nondisclaimer .social {
+    padding: 2.5em;
+    margin-right: 9.25em;
+    float: right;
+}
+footer #disclaimer {
+    clear: both;
+}
+footer #disclaimer p {
+    font-size: 0.85em;
+    text-align: center;
+}
+footer #nondisclaimer .social .fa {
+    padding: 15px;
+    font-size: 15px;
+    width: 15px;
+    text-align: center;
+    text-decoration: none;
+    margin: 0 4px;
+    border-radius: 50%;
+}
+footer #nondisclaimer .social .fa:hover {
+    opacity: 0.7;
+}
+footer #nondisclaimer .social .fa-facebook {
+    background: #3b5998;
+    color: white;
+}
+footer #nondisclaimer .social .fa-twitter {
+    background: #55acee;
+    color: white;
+}
+footer #nondisclaimer .social .fa-instagram {
+    background: #125688;
+    color: white;
+}
+
+/* Activities */
+table {
+    width: 1000px;
+    margin: 4em auto 0 auto;
+  }
+  caption {
+    background: #852b1b;
+    height: 40px;
+    color: #fff;
+    font-size: 1.3em;
+    font-weight: bold;
+    padding-top: 1em;
+  }
+  thead {
+    background: #bde1ff;
+  }
+  tbody {
+    background: #eeffe6;
+    text-align: center;
+  }
+  th,
+  td {
+    width: 225px;
+    height: 75px;
+    vertical-align: middle;
+    border: solid 1px #852b1b;
+  }
+  th:first-child {
+    width: 125px;
+    height: 50px;
+    background: #4977d1;
+    color: #fff;
+  }
+  td:first-child {
+    font-weight: bold;
+    background: #bde1ff;
+  }
+  .tdhighlight {
+    background: #628a0c;
+    color: white;
+  }
+
+/* contact page */
+form .button {
+    text-align: right;
+}
+
+form .button input[type="submit"] {
+    background-color: #4977d1; 
+    color: white;
+    border: none;
+    padding: 10px 20px; 
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.phone, .email {
+    padding-bottom: 15px;
+}
+
+span:first-child {
+    font-weight: bold;
+}
+
+fieldset {
+    border: solid 3px #9ed034;
+}
+
+legend {
+    font-size: 20px;
+    color: #4977d1;
+}
+
+label {
+    font-weight: bold;
+}
+
+.textbox label {
+    display: block;
+    margin: 15px 0 0 0;
+}
+
+.textbox input[type="text"],
+.textbox input[type="email"],
+.commentbox textarea {
+    width: 500px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.radios, .selectmenu, .commentbox, .textbox {
+    margin: 20px;
+}
+
+/* Cliffs */
+.cliff-images {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.cliff {
+    width: 45%; /* width를 줄임 */
+    margin: 10px;
+    position: relative; /* 캡션을 위한 위치 설정 */
+}
+.cliff img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.cliff h3 {
+    position: absolute;
+    top: 0; /* 캡션을 이미지의 상단에 위치 */
+    left: 0;
+    background-color: #852b1b; /* 배경색 설정 */
+    color: #fff;
+    width: 100%;
+    text-align: center; /* 가운데 정렬 */
+    padding: 5px 0; /* 패딩 조정 */
+    font-size: 14px; /* 폰트 크기 줄임 */
+    font-weight: bold;
+    margin: 0;
+}

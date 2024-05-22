@@ -242,9 +242,9 @@ label {
     flex-wrap: wrap;
 }
 .cliff {
-    width: 45%; /* width를 줄임 */
+    width: 45%; 
     margin: 10px;
-    position: relative; /* 캡션을 위한 위치 설정 */
+    position: relative; 
 }
 .cliff img {
     width: 100%;
@@ -253,14 +253,14 @@ label {
 }
 .cliff h3 {
     position: absolute;
-    top: 0; /* 캡션을 이미지의 상단에 위치 */
+    top: 0; 
     left: 0;
-    background-color: #852b1b; /* 배경색 설정 */
+    background-color: #852b1b; 
     color: #fff;
     width: 100%;
-    text-align: center; /* 가운데 정렬 */
-    padding: 5px 0; /* 패딩 조정 */
-    font-size: 14px; /* 폰트 크기 줄임 */
+    text-align: center; 
+    padding: 5px 0; 
+    font-size: 14px; 
     font-weight: bold;
     margin: 0;
 }

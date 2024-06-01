@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 
 </head>
-<body id="contact">
+<body id="contact" onLoad="disableButton(true)">
     <div class="container">
         <header> 
             <div class="main-header">
@@ -76,6 +76,12 @@
                     <label>How did you hear about us:</label><br>  
                     <textarea></textarea>
                 </div>
+
+                <!-- Random Codes -->
+                <div class="randomcode">
+                    <input type="text" name="randomcode" placeholder="Enter characters">
+                    <p id="codes"></p>
+                </div>
             
                 <div class="button">
                     <input type="submit" value="Inquire">
@@ -118,49 +124,10 @@
             </div>
         </footer>
     </div>
-    <!-- Javascript Codes-->
-    <script>
+    <!-- Partners -->
+    <script src="js/site_scripts.js"></script>
+    <script src="js/randomecodes.js"></script>
 
-        var fileNames = [
-        "partner-bustour.png",
-        "partner-cabinrental.png",
-        "partner-campingadv.png",
-        "partner-collegetours.png",
-        "partner-rentalbike.png",
-        "partner-tourgroup.png"
-    ];
-
-        var altTexts = [
-        "Partner Bus Tours",
-        "Partner Cabin Rental",
-        "Partner Camping Adventure",
-        "Partner College Tours",
-        "Partner Bike Rentals",
-        "Partner Tour Group"
-    ];
-
-        // Base path for images
-        var basePath = "image/partners/"; 
-
-        // HTML structure for list items
-        var openList = "<li class='partner'>";
-        var closeList = "</li>";
-
-        // Array to store the full HTML for each image
-        var imageList = [];
-
-        // Loop to generate the HTML for each partner image
-        for (var i = 0; i < fileNames.length; i++) {
-            var image = "<img src='" + basePath + fileNames[i] + "' alt='" + altTexts[i] + "'>";
-            var listItem = openList + image + closeList;
-            imageList.push(listItem);
-        }
-
-        // Insert the generated HTML into the DOM
-        var partnersList = document.getElementById("partners"); 
-        partnersList.innerHTML = imageList.join("");
-
-    </script>
 
 </body>
 </html>

@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Great Cliffs of California</title>
     <link rel="stylesheet" href="styles.css">
-
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body id="home">
@@ -15,7 +14,7 @@
         <header> 
             <div class="main-header">
                 <div class="logo">
-                    <img src="image/logo.png" alt="Freat Cliffs Logo" width="125">
+                    <img src="image/logo.png" alt="Great Cliffs Logo" width="125">
                 </div>
                 <nav class="main-menu">
                     <ul>
@@ -37,44 +36,41 @@
             <div class="cliff-images">
                 <div class="cliff">
                     <h3>West Cliff</h3>
-                    <img src="image/cliff-west-sea.jpg" alt="West Cliff">
+                    <a href="#/" class="lightbox-toggle">
+                        <img src="image/cliff-west-sea.jpg" alt="West Cliff">
+                    </a>
                 </div>
                 <div class="cliff">
                     <h3>North Cliff</h3>
-                    <img src="image/cliff-north-mountain.jpg" alt="North Cliff">
+                    <a href="#/" class="lightbox-toggle">
+                        <img src="image/cliff-north-mountain.jpg" alt="North Cliff">
+                    </a>
                 </div>
                 <div class="cliff">
                     <h3>East Cliff</h3>
-                    <img src="image/cliff-east-river.jpg" alt="East Cliff">
+                    <a href="#/" class="lightbox-toggle">
+                        <img src="image/cliff-east-river.jpg" alt="East Cliff">
+                    </a>
                 </div>
                 <div class="cliff">
                     <h3>South Cliff</h3>
-                    <img src="image/cliff-south-canyon.jpg" alt="South Cliff">
+                    <a href="#/" class="lightbox-toggle">
+                        <img src="image/cliff-south-canyon.jpg" alt="South Cliff">
+                    </a>
                 </div>
+            </div>
+
+            <!-- Lightbox HTML 구조 -->
+            <div class="backdrop"></div>
+            <div class="box">
+                <button class="close">Close</button>
             </div>
         </main>
 
         <section>
             <ul id="partners">
-                <!-- <li class="partner">
-                    <img src="image/partners/partner-bustour.png" alt="Partner Bus Tours">
-                </li>
-                <li class="partner">
-                    <img src="image/partners/partner-cabinrental.png" alt="Partner Cabin Rental">
-                </li>
-                <li class="partner">
-                    <img src="image/partners/partner-campingadv.png" alt="Partner Camping Adventure">
-                </li>
-                <li class="partner">
-                    <img src="image/partners/partner-collegetours.png" alt="Partner College Tours">
-                </li>
-                <li class="partner">
-                    <img src="image/partners/partner-rentalbike.png" alt="Partner Bike Rentals">
-                </li>
-                <li class="partner">
-                    <img src="image/partners/partner-tourgroup.png" alt="Partner Tour Group">
-                </li> -->
-           </ul>
+                <!-- Partners 이미지들 -->
+            </ul>
         </section>
 
         <footer>
@@ -86,7 +82,7 @@
                     <a href="#" class="fa fa-facebook"></a>
                     <a href="#" class="fa fa-instagram"></a>
                     <a href="#" class="fa fa-twitter"></a>
-                  </div>
+                </div>
             </div>
             <div id="disclaimer">
                 <p>This website is designed and created solely for educational purposes only at Westcliff University. All contents are not intended for any commercial gain or use.</p>
@@ -94,9 +90,37 @@
         </footer>
     </div>
 
-    <!-- Partners -->
-    <script src="js/site_scripts.js"></script>
+    <script>
+        $(document).ready(function(){
 
+            /* Open lightbox on image click */
+            $('.lightbox-toggle img').click(function(event){
+                event.preventDefault();
+                $('.backdrop').animate({'opacity':'.50'}, 300, 'linear').css('display', 'block');
+                $('.box').fadeIn();
 
+                // Check if lightbox has an image
+                if ($('.box').contents('img')) {
+                    $('.box').contents().remove('img'); // If true, clear image
+                }
+
+                // Get the alt attribute value of the clicked image
+                var $altvalue = $(this).attr('alt');
+
+                // Append the image to the lightbox
+                var img = $(this).clone();
+                $('.box').append(img);
+            });
+
+            /* Close lightbox on click */
+            $('.close, .backdrop').click(function(){
+                $('.backdrop').animate({'opacity':'0'}, 300, 'linear', function(){
+                    $('.backdrop').css('display', 'none');
+                });
+                $('.box').fadeOut();
+            });
+
+        });
+    </script>
 </body>
 </html>

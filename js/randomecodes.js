@@ -4,10 +4,10 @@
 var getCode = ''; // to store entered code
 var btnvalue = true; // for button boolean value
 var code = ''; // to store generated code
+var str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$';
 
 // Function to generate combination of characters
 function generateCode() {
-    var str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$';
     code = ''; // initialize to empty value
 
     // Generate character multiple times using a loop

@@ -324,3 +324,34 @@ label {
 .box img {
     width: 100%;
 }
+
+/* styles.css */
+
+.button input[type="submit"] {
+    float: left;
+}
+
+/* CSS for the Random Codes section */
+.randomcode {
+    display: flex;
+    align-items: center;
+}
+
+.randomcode #codes {
+    margin-left: 20px;
+}
+
+.button input[type="submit"] {
+    float: right; /* Float the button to the right */
+    /* Additional styles */
+    background-color: #4977d1;
+    color: white;
+    border: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 20px;
+    width: 8em;
+    height: 2.5em;
+}
+
+/* Keep the rest of your existing CSS as is */

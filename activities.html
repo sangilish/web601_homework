@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 
 </head>
 <body id="activities">
@@ -116,6 +118,23 @@
 
     <!-- Partners -->
     <script src="js/site_scripts.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Add the class selectable to the appropriate cells and set cursor style
+            $("td:not(:contains('Not Available'))").addClass("selectable").css({
+                "cursor": "pointer"
+                });
+
+            // Highlight cell on click and toggle highlight
+            $("td.selectable").click(function() {
+                $(this).toggleClass("highlight");
+                $(this).css({
+                    "background-color": $(this).hasClass("highlight") ? "yellow" : "", // Toggle background color
+                    "color": $(this).hasClass("highlight") ? "black" : "" // Reset text color if needed
+                });
+        });
+});
+    </script>
 
 </body>
 </html>

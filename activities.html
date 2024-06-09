@@ -6,15 +6,13 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-
 </head>
 <body id="activities">
     <div class="container">
         <header> 
             <div class="main-header">
                 <div class="logo">
-                    <img src="image/logo.png" alt="Freat Cliffs Logo" width="125">
+                    <img src="image/logo.png" alt="Great Cliffs Logo" width="125">
                 </div>
                 <nav class="main-menu">
                     <ul>
@@ -28,8 +26,7 @@
         </header>
         <main>
             <h1>Activities</h1>
-            <p>There are many planned activities at all the cliff sites. Some are scheduled daily, weekly, monthly and yearly. These activities are not however run by the state park and recreational department. They are operated and manage by private vendors but are partners with the state department. Therefore, for schedule inquiries or information, please contact them directly. For a list of activities, please refer to the table below:
-            </p>
+            <p>There are many planned activities at all the cliff sites. Some are scheduled daily, weekly, monthly and yearly. These activities are not however run by the state park and recreational department. They are operated and manage by private vendors but are partners with the state department. Therefore, for schedule inquiries or information, please contact them directly. For a list of activities, please refer to the table below:</p>
             <table>
                 <caption>Activities at the Cliffs</caption>
                 <thead>
@@ -79,6 +76,16 @@
                     </tr>
                 </tbody>
             </table>
+
+            <div id="displaySelected">
+                <div id="result">
+                    <h4>My selected activities to enquire:</h4>
+                </div>
+                <div id="sendinfo">
+                    <input type="email" placeholder="johndoe@gmail.com">
+                    <button>Get Info</button>
+                </div>
+            </div>
         </main>
 
         <section>
@@ -120,20 +127,37 @@
     <script src="js/site_scripts.js"></script>
     <script>
         $(document).ready(function() {
-            // Add the class selectable to the appropriate cells and set cursor style
-            $("td:not(:contains('Not Available'))").addClass("selectable").css({
-                "cursor": "pointer"
-                });
+            // User interaction with table cells
+            $("td").click(function() {
+                // User select a table data cell
+                var content = $(this).text(); // get content of cell
+                
+                if (content != "Not Available") { // check if content does not contain a particular string
+                    $(this).toggleClass("highlight"); // add or remove class when cell is selected
 
-            // Highlight cell on click and toggle highlight
-            $("td.selectable").click(function() {
-                $(this).toggleClass("highlight");
-                $(this).css({
-                    "background-color": $(this).hasClass("highlight") ? "yellow" : "", // Toggle background color
-                    "color": $(this).hasClass("highlight") ? "black" : "" // Reset text color if needed
-                });
+                    if ($(this).hasClass("highlight")) { // check if selected cell has class
+                        $(this).css({
+                            "background-color": "yellow",
+                            "color": "black"
+                        });
+                        $("#displaySelected").css("visibility", "visible"); // make display box visible
+                        $("#displaySelected").css("margin-top", "2em"); // add spaces above display box
+                        $("#result").append("<p>"+content+"</p>"); // add child element with contents of cell
+                    } else { // if selected cell doesn't have class
+                        $(this).css({
+                            "background-color": "",
+                            "color": ""
+                        });
+                        $("#result p:contains("+content+")").remove(); // remove child element
+
+                        if ($("#result p").length == false) { // check if there are any child elements within parent
+                            $("#displaySelected").css("visibility", "hidden"); // make display box hidden
+                            $("#displaySelected").css("margin-top", "10"); // remove spaces above display box
+                        }
+                    }
+                }
+            });
         });
-});
     </script>
 
 </body>
